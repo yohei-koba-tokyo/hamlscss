@@ -1,7 +1,7 @@
 .footer
   - if user_signed_in?
     .new_message
-      = form_with(url: posts_path, local: true) do |form|
+      = form_with(model: @post, local: true) do |form|
         .input-box__text
           = form.text_area :message, placeholder: "type a message (in 25 characters or less)", rows: "10"
         .submit

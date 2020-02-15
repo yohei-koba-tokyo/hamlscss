@@ -10,11 +10,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @posts = Post.all
   end
 
   def create
     Post.create(post_params)
-    redirect_to root_path
+    redirect_to new_post_path
   end
 
   def edit
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
 private
   def post_params
-    params.permit(:message)
+    params.require(:post).permit(:message).merge(user_id: current_user.id)
   end
 
 
