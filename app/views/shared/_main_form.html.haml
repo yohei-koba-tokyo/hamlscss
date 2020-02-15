@@ -1,76 +1,12 @@
 .main
   .main__posts
-    .main__posts__post
-      .main__posts__post__text
-        test test test
-      .main__posts__post__info
-        .main__posts__post__info__name
-          naoko tamura
-        .main__posts__post__info__date
-          2020/2/8(Sat)
-
-    .main__posts__post
-      .main__posts__post__text
-        test test test
-      .main__posts__post__info
-        .main__posts__post__info__name
-          yohei
-        .main__posts__post__info__date
-          2020/2/8(Sat)
-
-
-    .main__posts__post
-      .main__posts__post__text
-        test test test
-      .main__posts__post__info
-        .main__posts__post__info__name
-          yohei
-        .main__posts__post__info__date
-          2020/2/8(Sat)
-
-
-
-    .main__posts__post
-      .main__posts__post__text
-        test test test
-      .main__posts__post__info
-        .main__posts__post__info__name
-          yohei
-        .main__posts__post__info__date
-          2020/2/8(Sat)
-
-
-
-    .main__posts__post
-      .main__posts__post__text
-        test test test
-      .main__posts__post__info
-        .main__posts__post__info__name
-          yohei
-        .main__posts__post__info__date
-          2020/2/8(Sat)
-
-
-
-    .main__posts__post
-      .main__posts__post__text
-        test test test
-      .main__posts__post__info
-        .main__posts__post__info__name
-          yohei
-        .main__posts__post__info__date
-          2020/2/8(Sat)
-
-
-
-    .main__posts__post
-      .main__posts__post__text
-        test test test
-      .main__posts__post__info
-        .main__posts__post__info__name
-          yohei
-        .main__posts__post__info__date
-          2020/2/8(Sat)
-
-
+    - @posts.each do |post|
+      .main__posts__post
+        .main__posts__post__text
+          = post.message
+        .main__posts__post__info
+          .main__posts__post__info__name
+            = post.user.name
+          .main__posts__post__info__date
+            = post.created_at.strftime("%Y/%m/%d %H:%M")
 

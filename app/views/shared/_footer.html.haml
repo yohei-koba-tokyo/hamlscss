@@ -1,8 +1,11 @@
 .footer
-  .form
-    %form.new_message
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message (in 25 characters or less)"}
-      .submit
-        %input{type: "submit", class: "submit-btn", value: "Post"}
+  - if user_signed_in?
+    .new_message
+      = form_with(url: posts_path, local: true) do |form|
+        .input-box__text
+          = form.text_area :message, placeholder: "type a message (in 25 characters or less)", rows: "10"
+        .submit
+          = form.submit "POST"
+  -else
+    %h1 please login or signup!
   %p="legrosapp 2020"
