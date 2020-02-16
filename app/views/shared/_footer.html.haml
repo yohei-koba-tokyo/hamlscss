@@ -1,11 +1,11 @@
 .footer
   - if user_signed_in?
     .new_message
-      = form_with(model: @post, local: true) do |form|
+      = form_with(model: @post, local: true, id: "new_message") do |form|
         .input-box__text
-          = form.text_area :message, placeholder: "type a message (in 25 characters or less)", rows: "10"
+          = form.text_area :message, placeholder: "type a message (in 25 characters or less)", rows: "10", class: "textbox"
         .submit
-          = form.submit "POST"
+          = form.submit "POST", class: "form__submit"
   -else
     %h1 please login or signup!
   %p="legrosapp 2020"
